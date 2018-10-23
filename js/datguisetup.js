@@ -29,7 +29,7 @@ window.onload = function () {
         })
         .listen();
 
-    gui.add(vacuumParms, 'zoom', 1, 10)
+    gui.add(vacuumParms, 'zoom', 1, 40)
         .onChange(function (newValue) {
             scaleCamera();
         })

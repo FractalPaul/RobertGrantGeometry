@@ -126,8 +126,7 @@ function render() {
 
 function AddSpheres(radius, group, geometry, meshInner, meshOuter) {
     var numberSpheres = 16;
-    var numSegments = 10;
-    var offset = 0;
+    var numSegments = 10;    
     var diameter = 2 * radius;
     // add base 1 spheres
     for (var i = 0; i < numberSpheres; i++) {
@@ -146,8 +145,7 @@ function AddSpheres(radius, group, geometry, meshInner, meshOuter) {
     // Draw inner circles of 2 diameter.
     var sphereGeo2 = new THREE.SphereBufferGeometry(diameter, numSegments, numSegments);
     for (var j = 0; j < numberSpheres; j++) {
-        offset = 8 * radius * j;
-        // Add base 2 spheres
+               // Add base 2 spheres
         var sphere = new THREE.Mesh(sphereGeo2, meshInner);
         sphere.position.x = diameter * j;
         sphere.position.y = 0;
@@ -206,7 +204,7 @@ function AddSpheres(radius, group, geometry, meshInner, meshOuter) {
     group.add(sphere);
 
     // draw outer circles with radius of 4 diameter
-    numSegments = 16;
+    numSegments = 26;
     var sphereGeo4 = new THREE.SphereBufferGeometry(4 * diameter, numSegments, numSegments);
     for (var j = 0; j < numberSpheres / 6; j++) {
         var sphere = new THREE.Mesh(sphereGeo4, meshOuter);
@@ -268,7 +266,7 @@ function AddSpheres(radius, group, geometry, meshInner, meshOuter) {
     group.add(sphere);
 
     // Draw over arching encompassing circle
-    numSegments = 25;
+    numSegments = 32;
     var sphereGeo16 = new THREE.SphereBufferGeometry(16 * diameter, numSegments, numSegments);
     sphere = new THREE.Mesh(sphereGeo16, meshOuter);
     group.add(sphere);
